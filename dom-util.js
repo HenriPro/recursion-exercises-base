@@ -1,12 +1,24 @@
 
 const visitAllNodes = function(node, callback) {
-  // Hint: read about DOM nodes and node methods here: https://developer.mozilla.org/en-US/docs/Web/API/Node
-  // Your code here
+ if(node.childNodes) {
+   let children = node.childNodes;
+   for(let i = 0; i < children.length; i++) {
+     visitAllNodes(children[i], callback)
+   }
+ }
+ callback(node);
 };
 
 const flattenTreeToArray = function(node) {
   // Hint: Use visitAllNodes()
   // Your code here
+  const flatNode = [];
+  visitAllNodes(node, (iteratedNode) => {
+    flatNode.push(iteratedNode);
+  });
+  console.log(flatNode);
+  return flatNode;
+
 };
 
 module.exports = {
