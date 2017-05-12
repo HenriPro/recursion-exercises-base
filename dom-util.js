@@ -16,7 +16,6 @@ const flattenTreeToArray = function(node) {
   visitAllNodes(node, (iteratedNode) => {
     flatNode.push(iteratedNode);
   });
-  console.log(flatNode);
   return flatNode;
 
 };
