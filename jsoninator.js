@@ -44,7 +44,7 @@ const stringify = function(obj) {
       }
       result += stringify(key);
       result += ":";
-      result += stringify(obj[key])
+      result += stringify(obj[key]);
     }
 
     result += "}";
